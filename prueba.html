@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <body> 
+    </body>
+    <script>
+        async function blair() {
+            const consulta = await fetch ("https://raw.githubusercontent.com/Martinaee/Data-Json/main/json");
+            const data = await consulta.json();
+            console.log(data);
+            data.forEach((x)=> {
+                document.querySelector("body").innerHTML += '<p>' +x.title + '</p>';
+            })
+        }
+        
+        blair().catch ((error) => console.error(error));
+    </script>
+</html>
